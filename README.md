@@ -1,7 +1,7 @@
 # Build VirtualBox in Windows
 
 ## Notice  
-Based on [this repository](https://github.com/st424204/build-virtualbox-in-windows). Currently works for VirtualBox 7.0.6.  
+Based on [this repository](https://github.com/st424204/build-virtualbox-in-windows). Currently works for VirtualBox 7.0.8.  
 
 ## Setup Environment
 
@@ -26,6 +26,14 @@ Based on [this repository](https://github.com/st424204/build-virtualbox-in-windo
     * Needed for `kmk packing`
     * Download `wix311-binaries.zip`
     * Extract the file into `C:\VBoxBuild\wix311`
+
+* [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html)
+    * [x32](https://slproweb.com/download/Win32OpenSSL-3_0_8.msi)
+    * [x64](https://slproweb.com/download/Win64OpenSSL-3_0_8.msi)
+    * Needed for `SSL`
+    * Download `Win32OpenSSL-3_0_8.msi`, `Win64OpenSSL-3_0_8.msi`
+    * Install in the `C:\VBoxBuild\SSL\OpenSSL-Win{architecture bit}`
+    * Example: `C:\VBoxBuild\SSL\OpenSSL-Win32`
 
 * [WinDDK 7.1](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=11800)
 * [Yasm](https://yasm.tortall.net/Download.html)
