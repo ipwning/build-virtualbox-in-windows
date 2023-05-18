@@ -77,6 +77,8 @@ After that, the building steps are bascially the same as the [original](#2-set-u
     - `mkdir C:/VBoxBuild/VirtualBox/out/win.amd64/release/bin/additions/`  
     - `touch C:/VBoxBuild/VirtualBox/out/win.amd64/release/bin/additions/VBoxGuestAdditions.iso`  
     - Rerun `setup.py` and `build.py` ( don't forget to delete the certificate first )
+* It probably will occurs some dll error. So you have to match the dll with path in the VirtualBox build folder.
+    - If occurs the `it was not found libcurl.dll` error. => add `C:\VBoxBuild\curl\x64` & `C:\VBoxBuild\curl\x32` in the %path% 
 
 
 ## Install and run VirtualBox
