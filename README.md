@@ -1,8 +1,8 @@
 # Build VirtualBox in Windows
 
 ## Notice  
-Based on [this repository](https://github.com/st424204/build-virtualbox-in-windows). Currently works for VirtualBox 7.0.8.  
-
+Based on [this repository](https://github.com/bruce30262/build-virtualbox-in-windows). Currently works for VirtualBox 7.0.8.  
+I recommend build the VirtualBox in windows 10 VM. (I built in Windows 10 VM of vmware)
 ## Setup Environment
 
 * [Visual Studio 2019 Professional](https://learn.microsoft.com/en-us/visualstudio/releases/2019/release-notes)
