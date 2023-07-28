@@ -28,10 +28,10 @@ I recommend build the VirtualBox in windows 10 VM. (I built in Windows 10 VM of 
     * Extract the file into `C:\VBoxBuild\wix311`
 
 * [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html)
-    * [x32](https://slproweb.com/download/Win32OpenSSL-3_0_8.msi)
-    * [x64](https://slproweb.com/download/Win64OpenSSL-3_0_8.msi)
+    * [x32](https://slproweb.com/download/Win64OpenSSL-3_0_9.msi)
+    * [x64](https://slproweb.com/download/Win64OpenSSL-3_0_9.msi)
     * Needed for `SSL`
-    * Download `Win32OpenSSL-3_0_8.msi`, `Win64OpenSSL-3_0_8.msi`
+    * Download `Win32OpenSSL-3_0_9.msi`, `Win64OpenSSL-3_0_9.msi`
     * Install in the `C:\VBoxBuild\SSL\OpenSSL-Win{architecture bit}`
     * Example: `C:\VBoxBuild\SSL\OpenSSL-Win32`
 
