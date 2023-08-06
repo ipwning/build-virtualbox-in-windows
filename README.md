@@ -5,6 +5,11 @@ Based on [this repository](https://github.com/bruce30262/build-virtualbox-in-win
 I recommend build the VirtualBox in windows 10 VM. (I built in Windows 10 VM of vmware)
 ## Setup Environment
 
+* [Python](https://www.python.org/downloads/release/python-3114/)
+    * Download `Windows installer (64-bit)`
+    * Install into default path
+    * Needed for Run build scripts and building process.
+
 * [Visual Studio 2019 Professional](https://learn.microsoft.com/en-us/visualstudio/releases/2019/release-notes)
 * Windows SDK 11 & WDK 11
     * https://go.microsoft.com/fwlink/?linkid=2166460
@@ -28,42 +33,26 @@ I recommend build the VirtualBox in windows 10 VM. (I built in Windows 10 VM of 
     * Extract the file into `C:\VBoxBuild\wix311`
 
 * [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html)
-    * [x32](https://slproweb.com/download/Win64OpenSSL-3_0_9.msi)
-    * [x64](https://slproweb.com/download/Win64OpenSSL-3_0_9.msi)
+    * [x32](https://slproweb.com/download/Win32OpenSSL-1_1_1v.msi)
+    * [x64](https://slproweb.com/download/Win64OpenSSL-1_1_1v.msi)
     * Needed for `SSL`
-    * Download `Win32OpenSSL-3_0_9.msi`, `Win64OpenSSL-3_0_9.msi`
+    * Download `Win32OpenSSL-1_1_1v.msi`, `Win64OpenSSL-1_1_1v.msi`
     * Install in the `C:\VBoxBuild\SSL\OpenSSL-Win{architecture bit}`
     * Example: `C:\VBoxBuild\SSL\OpenSSL-Win32`
 
 * [WinDDK 7.1](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=11800)
+
 * [Yasm](https://yasm.tortall.net/Download.html)
     * Download `Win64.exe`, rename it to `yasm.exe`. Set the PATH env so `yasm.exe` can be found in PATH.
+
 * Qt
-    * [Online installer](https://d13lb3tujbc8s0.cloudfront.net/onlineinstallers/qt-unified-windows-x64-4.5.1-online.exe)
+    * [Online installer](https://d13lb3tujbc8s0.cloudfront.net/onlineinstallers/qt-unified-windows-x64-4.6.0-online.exe)
     * Use the installer to install Qt. You need to register an account first
     * Install the prebuild version ( `v5.15.2`, `MSVC 2019 64 bit` )
     * When it ask you the install path, set it to `C:\VBoxBuild\Qt`
 
-* MinGW
-    * In this repo `setup.py` will install and build mingw for you, but you need to add `C:\VBoxBuild\MinGW\mingw64\bin` in the PATH env.
-
 ## How to build
-
-Before building, you'll have to patch the source code in `src\VBox\Runtime\common\ldr\ldrPE.cpp:4812`:  
-
-```C
-// Goto line 4812
-// Make sure you patch it into the following lines:
-    if (   fNewerStructureHack
-            && Dir.Size > cbMaxKnown
-            && !(fFlags & (RTLDR_O_FOR_DEBUG | RTLDR_O_FOR_VALIDATION)) && 0)
-            //&& !ASMMemIsZero(&u.abZeros[cbMaxKnown], Dir.Size - cbMaxKnown))
-        {
-
-```
-Patch the source code so later it won't ran into error saying `Fail to load VMMR0.r0....`
-
-After that, the building steps are bascially the same as the [original](#2-set-up-privilege) :  
+The building steps are bascially the same as the [original](#2-set-up-privilege) :  
 * Turn on test mode, reboot.  
 * Make sure the VirtualBox source code is in `C:/VBoxBuild/VirtualBox/`.  
 * Open cmd as admin.
@@ -82,7 +71,7 @@ After that, the building steps are bascially the same as the [original](#2-set-u
 
 
 ## Install and run VirtualBox
-* **Install the official VirtualBox first.** This will installed the required library and solve some weird issues.
+<!-- * **Install the official VirtualBox first.** This will installed the required library and solve some weird issues. -->
 * After making sure the official VirtualBox can run normally, install the self-build version of VirtualBox ( use the `msi` installer ). The installer will replace the one in `C:\Program Files\Oracle\VirtualBox`.
 * Copy `libcurl.dll` in `C:\VBoxBuild\curl\x64`, place it under `C:\Program Files\Oracle\VirtualBox` so our VirtualBox can launch.
 * Now open VirtualBox. If you're lucky enough you should see it launched successfully.
