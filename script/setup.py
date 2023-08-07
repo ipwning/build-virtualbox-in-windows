@@ -1,6 +1,6 @@
 url_7za         = r'https://www.7-zip.org/a/7za920.zip'
 url_sdl         = r'http://www.libsdl.org/release/SDL-devel-1.2.15-VC.zip'
-url_curl        = r'https://curl.se/download/curl-8.1.2.zip'
+url_curl        = r'https://curl.se/download/curl-8.0.1.zip'
 
 from tool import *
 
