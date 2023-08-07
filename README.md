@@ -18,7 +18,7 @@ I recommend build the VirtualBox in windows 10 VM. (I built in Windows 10 VM of 
     * Basically you can use Visual Stuido Installer to install the latest SDK and WDK. **Notice that SDK and WDK's version should be the same.**  
     * Currently I'm using version `10.0.22621.0`.
     
-* [WinSDK 7.1](https://www.microsoft.com/en-us/download/details.aspx?id=8279)
+<!-- * [WinSDK 7.1](https://www.microsoft.com/en-us/download/details.aspx?id=8279)
     * Needed for `kmk packing`
     * Install into default path
     * If install failed, check out [this reference](https://notepad.patheticcockroach.com/1666/installing-visual-c-2010-and-windows-sdk-for-windows-7-offline-installer-and-installation-troubleshooting/)
@@ -30,7 +30,7 @@ I recommend build the VirtualBox in windows 10 VM. (I built in Windows 10 VM of 
 * [WIX3](https://github.com/wixtoolset/wix3/releases)
     * Needed for `kmk packing`
     * Download `wix311-binaries.zip`
-    * Extract the file into `C:\VBoxBuild\wix311`
+    * Extract the file into `C:\VBoxBuild\wix311` -->
 
 * [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html)
     * [x32](https://slproweb.com/download/Win32OpenSSL-1_1_1v.msi)
@@ -58,7 +58,7 @@ The building steps are bascially the same as the [original](#2-set-up-privilege)
 * Open cmd as admin.
 * `py script/setup.py`
 * `py script/build.py`  
-    - This will do `kmk` and `kmk packing`, which will create an installer ( `.msi` file ) in `C:\VBoxBuild\VirtualBox\out\win.amd64\release\obj\Installer\win`.
+    <!-- - This will do `kmk` and `kmk packing`, which will create an installer ( `.msi` file ) in `C:\VBoxBuild\VirtualBox\out\win.amd64\release\obj\Installer\win`. -->
 
 ### Troubleshooting  
 * Make sure to delete all the certificates named `MyTestCertificate` before building ( check the [FAQ](#faq) below ).  

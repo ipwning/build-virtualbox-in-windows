@@ -1,5 +1,4 @@
 url_7za         = r'https://www.7-zip.org/a/7za920.zip'
-url_mingw       = r'https://jaist.dl.sourceforge.net/project/mingw-w64/Toolchains%20targetting%20Win64/Personal%20Builds/rubenvb/gcc-4.5-release/x86_64-w64-mingw32-gcc-4.5.4-release-win64_rubenvb.7z'
 url_sdl         = r'http://www.libsdl.org/release/SDL-devel-1.2.15-VC.zip'
 url_curl        = r'https://curl.se/download/curl-8.1.2.zip'
 
@@ -22,9 +21,6 @@ def main():
     if create_folder(f'{path_main_dir}/7za'):
         print('[-] Download 7za')
         extract_to(url_7za, f'{path_main_dir}/7za', True)
-    if create_folder(f'{path_main_dir}/MinGW'):
-        print('[-] Download MinGW')
-        extract_to(url_mingw, f'{path_main_dir}/MinGW')
     if create_folder(f'{path_main_dir}/SDL'):
         print('[-] Download SDL')
         extract_to(url_sdl, f'{path_main_dir}/SDL')
