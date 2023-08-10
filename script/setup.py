@@ -1,7 +1,7 @@
 url_7za         = r'https://www.7-zip.org/a/7za920.zip'
 url_mingw       = r'https://jaist.dl.sourceforge.net/project/mingw-w64/Toolchains%20targetting%20Win64/Personal%20Builds/rubenvb/gcc-4.5-release/x86_64-w64-mingw32-gcc-4.5.4-release-win64_rubenvb.7z'
 url_sdl         = r'http://www.libsdl.org/release/SDL-devel-1.2.15-VC.zip'
-url_curl        = r'https://curl.se/download/curl-8.1.2.zip'
+url_curl        = r'https://curl.se/download/curl-8.0.1.zip'
 
 from tool import *
 
