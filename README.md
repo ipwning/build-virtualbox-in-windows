@@ -49,19 +49,6 @@ I recommend build the VirtualBox in windows 10 VM. (I built in Windows 10 VM of 
 
 ## How to build
 
-Before building, you'll have to patch the source code in `src\VBox\Runtime\common\ldr\ldrPE.cpp:4812`:  
-
-```C
-// Goto line 4812
-// Make sure you patch it into the following lines:
-    if (   fNewerStructureHack
-            && Dir.Size > cbMaxKnown
-            && !(fFlags & (RTLDR_O_FOR_DEBUG | RTLDR_O_FOR_VALIDATION)) && 0)
-            //&& !ASMMemIsZero(&u.abZeros[cbMaxKnown], Dir.Size - cbMaxKnown))
-        {
-
-```
-Patch the source code so later it won't ran into error saying `Fail to load VMMR0.r0....`
 
 After that, the building steps are bascially the same as the [original](#2-set-up-privilege) :  
 * Turn on test mode, reboot.  
