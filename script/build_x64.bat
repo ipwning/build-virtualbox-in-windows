@@ -16,7 +16,14 @@ IF EXIST %DEFAULT_DIR%\curl\x64\libcurl.lib echo    -libcurl.lib OK
 IF EXIST %DEFAULT_DIR%\curl\x64\libcurl.dll echo    -libcurl.dll OK
 IF EXIST %DEFAULT_DIR%\curl\x64\include echo    -Include Files OK
 
-echo [+] Qt
+@REM echo [+] Qt
 
-cd %QT_DIR%
-configure.bat -opensource -confirm-license -nomake tests -nomake examples -no-compile-examples -release -shared -no-ltcg -accessibility -no-sql-sqlite -opengl desktop -no-openvg -no-nis -no-iconv -no-evdev -no-mtdev -no-inotify -no-eventfd -largefile -no-system-proxies -qt-zlib -qt-pcre -no-icu -qt-libpng -qt-libjpeg -qt-freetype -no-fontconfig -qt-harfbuzz -no-angle -incredibuild-xge -no-plugin-manifests -qmake -qreal double -rtti -strip -no-ssl -no-openssl -no-libproxy -no-dbus -no-audio-backend -no-wmf-backend -no-qml-debug -no-direct2d -directwrite -no-style-fusion -native-gestures -skip qt3d -skip qtactiveqt -skip qtandroidextras -skip qtcanvas3d -skip qtconnectivity -skip qtdeclarative -skip qtdoc -skip qtenginio -skip qtgraphicaleffects -skip qtlocation -skip qtmacextras -skip qtmultimedia -skip qtquickcontrols -skip qtquickcontrols2 -skip qtscript -skip qtsensors -skip qtserialbus -skip qtserialport -skip qtwayland -skip qtwebchannel -skip qtwebengine -skip qtwebsockets -skip qtwebview -skip qtx11extras -skip qtxmlpatterns -prefix %DEFAULT_DIR%\Qt\qt5-x64
+@REM cd %QT_DIR%
+CALL "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Auxiliary\Build\vcvarsall.bat" amd64
+@REM SET _ROOT=C:\Qt\qt-everywhere-src-5.15.2
+@REM SET PATH=%_ROOT%\qtbase\bin;%_ROOT%\gnuwin32\bin;%PATH%
+@REM SET _ROOT=
+@REM cd %QT_DIR%
+@REM .\configure.bat -opensource -confirm-license -nomake tests -nomake examples -no-compile-examples -release -shared -no-ltcg -accessibility -opengl desktop -no-openvg -no-iconv -no-evdev -no-mtdev -no-inotify -no-eventfd -no-system-proxies -qt-zlib -qt-pcre -no-icu -qt-libpng -qt-libjpeg -qt-freetype -no-fontconfig -qt-harfbuzz -no-angle -no-plugin-manifests -qreal double -strip -no-ssl -no-openssl -no-libproxy -no-dbus -no-direct2d -directwrite -no-style-fusion -skip qt3d -skip qtactiveqt -skip qtandroidextras -skip qtcanvas3d -skip qtconnectivity -skip qtdeclarative -skip qtdoc -skip qtgraphicaleffects -skip qtlocation -skip qtmacextras -skip qtmultimedia -skip qtquickcontrols -skip qtquickcontrols2 -skip qtscript -skip qtsensors -skip qtserialbus -skip qtserialport -skip qtwayland -skip qtwebchannel -skip qtwebengine -skip qtwebsockets -skip qtwebview -skip qtx11extras -skip qtxmlpatterns -prefix C:\VBoxBuild\Qt\qt5-x64
+@REM nmake
+@REM nmake install
